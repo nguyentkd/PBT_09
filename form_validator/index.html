@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Validator</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Realtime validation</p>
+      <h1>Form Validator</h1>
+      <p>Validation runs on every input event, phone formatting is automatic, and submit stays disabled until everything is valid.</p>
+    </section>
+
+    <section class="panel">
+      <form id="registerForm" novalidate>
+        <div class="field">
+          <label for="nameInput">Tên</label>
+          <div class="control">
+            <input id="nameInput" type="text" placeholder="Nhập tên của bạn" aria-describedby="nameMessage">
+            <span id="nameStatus" class="status"></span>
+          </div>
+          <small id="nameMessage" class="message"></small>
+        </div>
+
+        <div class="field">
+          <label for="emailInput">Email</label>
+          <div class="control">
+            <input id="emailInput" type="email" placeholder="name@example.com" aria-describedby="emailMessage">
+            <span id="emailStatus" class="status"></span>
+          </div>
+          <small id="emailMessage" class="message"></small>
+        </div>
+
+        <div class="field">
+          <label for="passwordInput">Password</label>
+          <div class="control">
+            <input id="passwordInput" type="password" placeholder="Tối thiểu 8 ký tự" aria-describedby="passwordMessage">
+            <span id="passwordStatus" class="status"></span>
+          </div>
+          <div class="meter"><div id="passwordBar" class="meter-fill"></div></div>
+          <small id="passwordMessage" class="message"></small>
+        </div>
+
+        <div class="field">
+          <label for="confirmInput">Confirm password</label>
+          <div class="control">
+            <input id="confirmInput" type="password" placeholder="Nhập lại password" aria-describedby="confirmMessage">
+            <span id="confirmStatus" class="status"></span>
+          </div>
+          <small id="confirmMessage" class="message"></small>
+        </div>
+
+        <div class="field">
+          <label for="phoneInput">Phone</label>
+          <div class="control">
+            <input id="phoneInput" type="text" inputmode="numeric" placeholder="0901-234-567" aria-describedby="phoneMessage">
+            <span id="phoneStatus" class="status"></span>
+          </div>
+          <small id="phoneMessage" class="message"></small>
+        </div>
+
+        <button id="submitBtn" class="submit-btn" type="submit" disabled>Đăng ký</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="successModal" class="modal" aria-hidden="true">
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="successTitle">
+      <button id="closeModal" class="modal-close" type="button" aria-label="Close modal">✕</button>
+      <h2 id="successTitle">Đăng ký thành công!</h2>
+      <div id="successBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
