@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <section class="card">
+      <p class="eyebrow">PBT 09</p>
+      <h1>Todo App</h1>
+      <form id="todoForm" class="todo-form" autocomplete="off">
+        <input id="todoInput" type="text" placeholder="What needs to be done?" aria-label="Todo input">
+        <button type="submit">Add</button>
+      </form>
+
+      <div class="toolbar">
+        <div class="filters" role="tablist" aria-label="Todo filters">
+          <button type="button" class="filter active" data-filter="all">All</button>
+          <button type="button" class="filter" data-filter="active">Active</button>
+          <button type="button" class="filter" data-filter="completed">Completed</button>
+        </div>
+        <button type="button" id="clearCompleted" class="ghost-btn">Clear completed</button>
+      </div>
+
+      <div class="meta">
+        <span id="todoCount">0 items left</span>
+      </div>
+
+      <ul id="todoList" class="todo-list" aria-label="Todo list"></ul>
+    </section>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
